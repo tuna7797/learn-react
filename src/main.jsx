@@ -10,6 +10,8 @@ import * as ReactDOM from 'react-dom';
 // ReactDOM 버전 확인하기
 // console.log(`ReactDOM version: ${ReactDOM.version}`);
 
+globalThis.React = React;
+
 // React 요소 작성 (React API)
 const appElement = React.createElement(
   /* type */ 
@@ -20,11 +22,32 @@ const appElement = React.createElement(
     id: 'reactAppElement', 
     'data-type': 'React.ReactElement' 
   },
+  /* ...children -> [child, child, child, ...] */
+  React.createElement(
+    'h1', 
+    {
+      title: 'React is Awesome!',
+    },
+    'React는',
+    React.createElement('b', null, '어썸(awesome)'),
+    '해~'
+  )
 );
 console.log(appElement);
 
 // React 요소 작성 (with JSX)
-const appElementJSX = <div></div>;
+const appElementJSX = (
+  <div 
+    className="App" 
+    id="reactAppElement"
+    data-type="React.ReactElement"
+  >
+    <h1 title="React is Awesome!">
+      React는 <b>어썸(awesome)</b>해~
+    </h1>
+  </div>
+);
+
 console.log(appElementJSX);
 
 // App 함수 컴포넌트 만들기
