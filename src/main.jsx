@@ -1,8 +1,31 @@
 // React 모듈을 불러오기
+import * as React from 'react';
+
 // ReactDOM 모듈을 불러오기
+import * as ReactDOM from 'react-dom';
+
+// React 버전 확인하기
+// console.log(`React version: ${React.version}`);
+
+// ReactDOM 버전 확인하기
+// console.log(`ReactDOM version: ${ReactDOM.version}`);
 
 // React 요소 작성 (React API)
+const appElement = React.createElement(
+  /* type */ 
+  'div', 
+  /* props {} */ 
+  { 
+    className: 'App', 
+    id: 'reactAppElement', 
+    'data-type': 'React.ReactElement' 
+  },
+);
+console.log(appElement);
+
 // React 요소 작성 (with JSX)
+const appElementJSX = <div></div>;
+console.log(appElementJSX);
 
 // App 함수 컴포넌트 만들기
 
