@@ -1,14 +1,12 @@
-import Description from "./components/Description";
-import Heading from "./components/Heading";
-import RenderingProcessList from "./components/RenderingProcessList";
 
+import RootLayout from './layout/RootLayout';
 
 function App() {
   return (
     <div className="App">
-      <Heading />
-      <Description />
-      <RenderingProcessList />
+      <RootLayout>
+        페이지의 주요 콘텐츠
+      </RootLayout>
     </div>
   );
 }
