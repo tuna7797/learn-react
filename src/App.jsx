@@ -1,6 +1,10 @@
 import RootLayout from './layout/RootLayout';
+import * as Utils from './utils';
+
+console.log(Utils);
+
+// import Home from './pages/Home';
 // import About from './pages/About';
-import Home from './pages/Home';
 
 // {/* 홈 페이지 : index.html */}
 // {/* 소개 페이지 : about.html */}
@@ -11,7 +15,15 @@ function App() {
   return (
     <div className="App">
       <RootLayout>
-        <Home />
+        {/* <Home /> */}
+        <output style={{ display: 'block' }}>
+          {/* function composition */}
+          {/* {currencyKR(numberWithComma(getRandom(1920999)))} */}
+        </output>
+        {/* <output>{getRandomMinMax()}</output> */}
+        <output>
+          {Utils.currencyKR(Utils.numberWithComma(99870 + 19000 + 9400 + 870))}
+        </output>
       </RootLayout>
     </div>
   );
