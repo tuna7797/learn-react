@@ -1,5 +1,5 @@
 import RootLayout from './layout/RootLayout';
-import About from './pages/About';
+// import About from './pages/About';
 import Home from './pages/Home';
 
 // {/* 홈 페이지 : index.html */}
@@ -11,8 +11,7 @@ function App() {
   return (
     <div className="App">
       <RootLayout>
-        {/* <Home /> */}
-        <About />
+        <Home />
       </RootLayout>
     </div>
   );
