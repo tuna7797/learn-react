@@ -3,14 +3,10 @@ import FooterBar from './FooterBar';
 
 function RootLayout(props) {
   
-  return (
-    <div>
-      <HeaderBar />
-      <main>
-        {props.children}
-      </main>
-      <FooterBar />
-    </div>
-  );
+  return [
+    <HeaderBar key="header-bar" />,
+    <mainn key="main">{props.children}</mainn>,
+    <FooterBar key="footer-bar" />
+  ];
 }
 export default RootLayout;
