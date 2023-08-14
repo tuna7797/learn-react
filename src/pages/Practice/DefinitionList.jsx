@@ -1,7 +1,10 @@
 
 // 내부에 분리된 컴포넌트 호출
+// 학습 주제별 컴포넌트
+import ConditionalDisplay from './parts/ConditionalDisplay';
 import ConditionalRendering from './parts/ConditionalRendering';
 import DisplayingData from './parts/DisplayingData';
+import RenderingLists from './parts/RenderingLists';
 
 /* 데이터 ---------------------------------------------------------------------- */
 
@@ -36,37 +39,9 @@ function DefinitionList() {
         
         <DisplayingData statusMessage={statusMessage} />
         <ConditionalRendering imageType={imageType} />
+        <ConditionalDisplay />
+        <RenderingLists renderList={renderList} />
         
-        <dt>조건부 표시(conditional display)</dt>
-        <dd>
-          <p>
-            표시(display) 여부에 따라 이미지가 화면에서 감춰지거나 표시됩니다.
-          </p>
-          {/* isShowReactImage 상태 값에 따라 이미지가 화면에 표시되거나 표시되지 않도록 설정합니다. */}
-          <picture>
-            <source type="image/avif" srcSet="/react.avif" />
-            <source type="image/webp" srcSet="/react.webp" />
-            <img src="/react.png" alt="React" height={42} />
-          </picture>
-        </dd>
-        <dt>리스트 렌더링(list rendering)</dt>
-        <dd>
-          <p>상태 메시지(status message) 배열을 리스트 렌더링합니다.</p>
-          <ul className="renderList">{renderList()}</ul>
-        </dd>
-        <dd>
-          <p>상태 메시지(status message) 배열을 역순 정렬하여 렌더링합니다.</p>
-          <ul className="renderList">{renderList({ reverse: true })}</ul>
-        </dd>
-        <dd>
-          <p>
-            React 라이브러리(reactLibrary) 객체의 키, 값을 <q>설명 목록</q>으로
-            렌더링합니다.
-          </p>
-          <dl className="reactLibrary">
-            {/* 여기서 설명 목록으로 리스트 렌더링 합니다. */}
-          </dl>
-        </dd>
       </dl>
   )
 }
