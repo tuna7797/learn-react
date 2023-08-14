@@ -1,7 +1,5 @@
-/* eslint-disable react/prop-types */
-
+import HeaderBar from "./HeaderBar";
 import FooterBar from './FooterBar';
-import HeaderBar from './HeaderBar';
 
 function RootLayout(props) {
   
@@ -13,7 +11,6 @@ function RootLayout(props) {
       </main>
       <FooterBar />
     </div>
-  )
+  );
 }
-
 export default RootLayout;
