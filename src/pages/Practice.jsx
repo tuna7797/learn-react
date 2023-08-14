@@ -1,4 +1,5 @@
 // 스타일 및 에셋 연결
+import '../styles/Practice.css'
 
 const imageType = 'react';
 
@@ -25,7 +26,7 @@ function Practice() {
   };
 
   return (
-    <div className="App">
+    <div className="Practice">
       <h1>JSX 인 액션</h1>
       <hr />
       <dl className="descriptionList">
