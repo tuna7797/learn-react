@@ -32,7 +32,7 @@ function DisplayingData({ hidden, statusMessage }) {
         </span>
       </dd>
     </>
-  )
+  );
 }
 
-export default DisplayingData
+export default DisplayingData;

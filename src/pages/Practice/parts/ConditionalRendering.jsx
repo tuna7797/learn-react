@@ -35,10 +35,12 @@ function ConditionalRendering({ hidden, imageType }) {
 
   // if 또는 switch 문 사용
   switch(status) {
-    case 'isPending': return <p>대기 중입니다.</p>
-    case 'isLoading': return <p>로딩 중입니다.</p>
-    case 'isError': return <p>오류 발생했어요.</p>
-    default:
+    case 'isPending':
+      return <p>대기 중입니다.</p>;
+    case 'isLoading':
+      return <p>로딩 중입니다.</p>;
+    case 'isError':
+      return <p>오류 발생했어요.</p>;
   }
 
 
@@ -56,7 +58,7 @@ function ConditionalRendering({ hidden, imageType }) {
   const imageLabel = isReactImage ? 'React' : 'Vite';
 
   const isShowImage = true;
-  const isntShowImageLabel = false;
+  const isHideImageLabel = false;
 
   return (
     <div hidden={hidden}>
@@ -94,15 +96,13 @@ function ConditionalRendering({ hidden, imageType }) {
 
           {/* imageType이 'vite'인 경우 'Vite', 'react'인 경우 'React' 텍스트를 화면에 표시합니다. */}
           {/* { isReactImage ? 'React' : 'Vite' } */}
-          {isntShowImageLabel || imageLabel}
+          {isHideImageLabel || imageLabel}
         </div>
       </dd>
       <dd style={{ marginTop: 12 }}>
         <p>spinner 또는 vite 이미지가 랜덤으로 화면에 렌더링 되도록 합니다.</p>
         <div className="conditionalRendering">
-          {
-            renderRandomImageOrSpinner()
-          }
+         {renderRandomImageOrSpinner()}
         </div>
       </dd>
     </div>
