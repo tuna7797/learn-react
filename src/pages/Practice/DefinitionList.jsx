@@ -13,7 +13,8 @@ import { imageType, isShowReactImage, statusMessage } from './parts/data';
 function DefinitionList() {
   // 배열 데이터 → 순환 → 새롭게 가공된 배열 반환하고자 한다면?
   // 어떻게 해야 할까요?
-  const renderList = () => {
+  const renderList = ({ reverse = false} = {}) => {
+
     // const renderListItem = message => (
     //   <li key={message}>{message}</li>
     // );
@@ -27,7 +28,7 @@ function DefinitionList() {
     //   <li key={statusMessage[3]}>{statusMessage[3]}</li>,
     // ];
     const renderListItem = (message) => <li key={message}>{message}</li>;
-    return statusMessage.map(renderListItem);
+    return (!reverse ? statusMessage : statusMessage.toReversed()).map(renderListItem);
   };
   
   const allHidden = true;
