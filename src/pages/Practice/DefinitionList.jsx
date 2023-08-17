@@ -30,7 +30,7 @@ function DefinitionList() {
     return statusMessage.map(renderListItem);
   };
   
-  const allHidden = false;
+  const allHidden = true;
 
   return (
     <dl className="descriptionList">
