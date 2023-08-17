@@ -1,3 +1,4 @@
+import { getNode } from "./utils";
 import GoToButton from "./GoToButton";
 
 function Controller() {
@@ -7,30 +8,18 @@ function Controller() {
       <GoToButton 
         onPointerEnter={() => console.log('pointer enter')}
         onClick={function() {
-          console.log('go to down')
+          // side effect
+          const practiceElement = getNode('.Practice');
+          console.log(practiceElement)
         }} 
-        // onMouseEnter={() => {
-        //   console.log('mouse enter');
-        // }}
-        onMouseLeave={() => {
-          console.log('mouse leave');
-        }}
-        onKeyDown={() => {
-          console.log('key down');
-        }}
-        onKeyUp={() => {
-          console.log('key up');
-        }}
-        direction="down" 
-        label="스크롤 다운" 
       />
 
       <GoToButton 
+        direction="up" 
+        label="스크롤 업" 
         onClick={() => {
           console.log('go to up');
         }} 
-        direction="up" 
-        label="스크롤 업" 
       />
     </div>
   );
