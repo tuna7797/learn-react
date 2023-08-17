@@ -1,18 +1,22 @@
+function GoToButton({ 
+  direction/* 'down' | 'up' */, 
+  label /* string */
+}) {
 
-
-function GoToButton({ direction, label }) {
-
-  let className = ''
-  if (direction === 'down') {
-    className = 'scrollDown'
-  } else {
-    className = 'scrollUp'
-  }
+  // 문 또는 식
+  // let className = '';
+  // if (direction === 'down') {
+  //   className = 'scrollDown';
+  // } else {
+  //   className = 'scrollUp';
+  // }
 
   return (
     <button
       type="button"
-      className={className}
+      // className={className}
+      /* 식만 사용 가능 */
+      className={direction === 'down' ? 'scrollDown' : 'scrollUp'}
       aria-label={label}
       title={label}
     >
@@ -33,7 +37,7 @@ function GoToButton({ direction, label }) {
         />
       </svg>
     </button>
-  )
+  );
 }
 
 export default GoToButton
