@@ -1,10 +1,12 @@
 
 // 컴포넌트 함수 외부의 것을 변경해서는 안된다.
+// 렌더링 프로세스에 영향을 미치기 때문.
 
 function Switcher() {
 
-  // 로컬 뮤테이션 (뮤턴트: 돌연변이)
+  // 로컬 뮤테이션
   // 컴포넌트 함수 내부의 것을 변경하는 것은 가능하다.
+  // 단, 렌더링 프로세스에 영향을 미치지 않아야 한다.
   // const memory = {
   //   cache: 100
   // }
@@ -18,7 +20,7 @@ function Switcher() {
   // DOM 스크립트(DOM 요소 접근/조작)
   // Switcher 컴포넌트를 구성하는 button 요소에 class를 설정하고 싶다.
   // document.querySelector('button').classList.add('switcher');
-
+  
   // 쓰기.읽기.수정.삭제(CRUD)
   // fetch API
   // fetch('https://random-data-api.com/api/v2/users?size=2')
@@ -28,7 +30,7 @@ function Switcher() {
   //     console.log(data);
   //   })
   //   .catch(error => console.error(error));
-
+  
   function fetchRandomUsers() {
     fetch('https://random-data-api.com/api/v2/users?size=2')
       .then(response => response.json())
