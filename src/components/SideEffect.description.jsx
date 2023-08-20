@@ -12,16 +12,12 @@ function SideEffect() {
   // pure
   console.log(document.querySelector('.SideEffect'));
 
-  React.useEffect(
-    /* setup */
-    () => {
-      // impure
-      console.log('effect callback')
-      const effectElement = document.querySelector('.SideEffect');
-      effectElement?.setAttribute('lang', 'en');
-    },
-    /* dependencies? */
-  );
+  React.useEffect(() => {
+    // impure
+    console.log('effect callback')
+    const effectElement = document.querySelector('.SideEffect');
+    effectElement.setAttribute('lang', 'en');
+  });
 
   /* 
     // Virtual DOM => Virtual Element Tree (React Element Tree)
@@ -52,7 +48,7 @@ function SideEffect() {
       }
     }
   */
-  
+
   return (
     React.createElement("div", { className: "SideEffect" },
       React.createElement("h2", null, "Side Effect"),
