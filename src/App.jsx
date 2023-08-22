@@ -1,13 +1,11 @@
-import RootLayout from './layout/RootLayout';
-import DemoPage from './pages/Demo';
+
+import Counter from './learn/StateManagement';
 
 function App() {
   return (
-    <div className="App">
-      <RootLayout>
-        <DemoPage />
-      </RootLayout>
-    </div>
+    <>
+      <Counter />
+    </>
   );
 }
 
