@@ -1,11 +1,13 @@
-
-import Counter from './learn/StateManagement';
+import RootLayout from './layout/RootLayout';
+import LearnStateAndEffects from './pages/LearnStateAndEffects';
 
 function App() {
   return (
-    <>
-      <Counter />
-    </>
+    <div className="App">
+      <RootLayout>
+        <LearnStateAndEffects />
+      </RootLayout>
+    </div>
   );
 }
 
