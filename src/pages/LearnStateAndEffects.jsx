@@ -1,5 +1,15 @@
 import { useState } from 'react';
 
+const initialRepository = {
+  id: 'repo-101',
+  title: 'yamoo9/likelion-FEQA',
+  link: 'https://github.com/yamoo9/likelion-FEQA',
+  profile: {
+    url: 'https://avatars.githubusercontent.com/u/1850554?s=16&v=4',
+    label: 'yamoo9',
+  },
+};
+
 function LearnStateAndEffects() {
   // 숫자 값 상태 관리
 
@@ -22,15 +32,16 @@ function LearnStateAndEffects() {
   // 배열 상태 관리
   // [10, 96]
 
-  const [repository, setRepository] = useState({
-    id: 'repo-101',
-    title: 'yamoo9/likelion-FEQA',
-    link: 'https://github.com/yamoo9/likelion-FEQA',
-    profile: {
-      url: 'https://avatars.githubusercontent.com/u/1850554?s=16&v=4',
-      label: 'yamoo9',
-    },
-  });
+  const [repository, setRepository] = useState(initialRepository);
+
+  const handleSaveRepository = (e) => {
+    e.preventDefault();
+    console.log(repository);
+  };
+
+  const handleResetRepository = () => {
+    setRepository(initialRepository);
+  };
 
   return (
     <div
@@ -46,10 +57,7 @@ function LearnStateAndEffects() {
       </output>
 
       <h2 className="text-2xl mt-10 font-semibold">저장소 정보 수정</h2>
-      <form className="w-1/2" onSubmit={(e) => {
-        e.preventDefault();
-        console.log(repository);
-      }}>
+      <form className="w-1/2" onSubmit={handleSaveRepository}>
         <div className="flex items-center gap-2 w-full">
           <label htmlFor="repoTitle" className="font-medium">
             타이틀 (title)
@@ -65,7 +73,7 @@ function LearnStateAndEffects() {
                 id: repository.id,
                 title: e.target.value,
                 link: repository.link,
-                profile: repository.profile
+                profile: repository.profile,
               });
             }}
             className="flex-1 p-1 border-b-2 border-slate-400 bg-transparent placeholder:text-slate-400"
@@ -120,7 +128,11 @@ function LearnStateAndEffects() {
           <button type="submit" className="py-1.5 px-2.5 bg-sky-500 text-white">
             저장
           </button>
-          <button type="reset" className="py-1.5 px-2.5 bg-rose-500 text-white">
+          <button
+            type="reset"
+            onClick={handleResetRepository}
+            className="py-1.5 px-2.5 bg-rose-500 text-white"
+          >
             취소
           </button>
         </div>
