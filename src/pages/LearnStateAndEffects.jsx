@@ -46,7 +46,10 @@ function LearnStateAndEffects() {
       </output>
 
       <h2 className="text-2xl mt-10 font-semibold">저장소 정보 수정</h2>
-      <form className="w-1/2">
+      <form className="w-1/2" onSubmit={(e) => {
+        e.preventDefault();
+        console.log(repository);
+      }}>
         <div className="flex items-center gap-2 w-full">
           <label htmlFor="repoTitle" className="font-medium">
             타이틀 (title)
@@ -58,8 +61,11 @@ function LearnStateAndEffects() {
             value={repository.title}
             onChange={(e) => {
               setRepository({
-                ...repository,
+                // ...repository,
+                id: repository.id,
                 title: e.target.value,
+                link: repository.link,
+                profile: repository.profile
               });
             }}
             className="flex-1 p-1 border-b-2 border-slate-400 bg-transparent placeholder:text-slate-400"
@@ -96,9 +102,12 @@ function LearnStateAndEffects() {
             value={repository.profile.label}
             onChange={(e) => {
               setRepository({
-                ...repository,
+                // ...repository,
+                // id: repository.id,
+                // title: repository.title,
                 profile: {
-                  ...repository.profile,
+                  // ...repository.profile,
+                  // url: repository.profile.url,
                   label: e.target.value,
                 },
               });
