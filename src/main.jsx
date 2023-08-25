@@ -2,12 +2,12 @@
 import './styles/tailwind.css';
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
-import Layout from './learn_pages/Layout';
+import App from './App';
 
 // ReactDOMRoot { render, unmount }
 ReactDOM.createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Layout />
+    <App /> {/* Virtual DOM (React Element Tree : React Created) */}
   </StrictMode>
 );
 
