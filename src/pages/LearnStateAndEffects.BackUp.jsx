@@ -30,15 +30,13 @@ function LearnStateAndEffects() {
         setData(responseData);
       })
       .catch((error) => {
-        if (!(error instanceof DOMException)) {
-          setStatus('error');
-          setError(error);
-        }
+        setStatus('error');
+        setError(error);
       });
 
     return () => {
       controller.abort();
-    };
+    }
   }, []);
 
   // 함수 몸체: 문 또는 식, 함수
@@ -72,8 +70,7 @@ function LearnStateAndEffects() {
           {data.items?.map((item) => (
             <li key={item.id}>
               <label>
-                <input type="checkbox" checked={item.done} readOnly />{' '}
-                {item.doit}
+                <input type="checkbox" checked={item.done} readOnly /> {item.doit}
               </label>
             </li>
           ))}
